@@ -37,16 +37,19 @@ class Viking extends Soldier {
 class Saxon extends Soldier {
     constructor(health, strength) {
         super(health, strength);
+    }
+    receiveDamage(damage){
+        super.receiveDamage(damage)
+        if(this.health <= 0){ 
+            return `A Saxon has died in combat`;
+        }else{
+            return `A Saxon has received ${damage} points of damage`;
+         }
+    }
         
-    }
-    receiveDamage { //IS diferrent from Soldier but should extend Soldier
-    }
-    attack() {      //SHOULD be inherited from Soldier
-
-    }
 }
 
-
+/*
 // War
 class War {
     constructor(health, strength) {
@@ -55,4 +58,5 @@ class War {
     }
     
 }
+
 */
